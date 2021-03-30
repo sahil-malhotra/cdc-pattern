@@ -12,6 +12,12 @@ cp default.env .env
 docker-compose up -d
 ```
 
+## Reading the logs (in another terminal)
+
+```sh
+docker logs -f postgres-cdc-stream
+```
+
 ## Initialising with some data
 
 Create brands table inside the postgres database:
@@ -21,12 +27,6 @@ CREATE TABLE brands (
     id serial PRIMARY KEY,
     name VARCHAR (50)
 );
-```
-
-## Reading the logs (in another terminal)
-
-```sh
-docker logs -f postgres-cdc-stream
 ```
 
 Insert some records in the brands table:
