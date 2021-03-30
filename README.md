@@ -23,6 +23,12 @@ CREATE TABLE brands (
 );
 ```
 
+## Reading the logs (in another terminal)
+
+```sh
+docker logs -f postgres-cdc-stream
+```
+
 Insert some records in the brands table:
 
 ```sql
@@ -30,10 +36,4 @@ INSERT INTO brands VALUES(1, 'Brand Name 1');
 INSERT INTO brands VALUES(2, 'Brand Name 2');
 UPDATE brands SET name = 'New Brand Name 1' WHERE id = 1;
 UPDATE brands SET name = 'New Brand Name 2' WHERE id = 2;
-```
-
-## Reading the logs
-
-```sh
-docker logs -f postgres-cdc-stream
 ```
